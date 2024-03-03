@@ -31,11 +31,17 @@ function NationPost(){
                                 <input type="text" onChange={(e)=>setName(e.target.value)}/>
                             </div>
                             
-                            <input type="submit" value="Post Nation"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Post Nation"/>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     
-                    <Link to="/nations">Back to List</Link>  
+                    <div className="createLink">
+                        <Link className="link" to="/nations">Back to List</Link> 
+                    </div>
                 </div>
             </div>
         </>

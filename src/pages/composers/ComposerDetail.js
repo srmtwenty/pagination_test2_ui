@@ -81,14 +81,14 @@ function ComposerDetail(){
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/composers/create">Post</Link>
+                            <Link className="link" to="/composers/create">Post</Link>
                         </div>
                         <div>
                             <div className="backToDetail">
-                                <Link to={`/composers/${id}/update`}>Update</Link>
+                                <Link className="link" to={`/composers/${id}/update`}>Update</Link>
                             </div>
                             <div className="backToDetail">
-                                <Link to="/composers">Back to List</Link> 
+                                <Link className="link" to="/composers">Back to List</Link> 
                             </div>
                         </div>
                     </div>

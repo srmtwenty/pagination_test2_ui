@@ -29,11 +29,17 @@ function TagPost(){
                                 <label className="labelPost">Name:</label>
                                 <input type="text" onChange={(e)=>setName(e.target.value)}/>
                             </div>
-                            <input type="submit" value="Post Tag"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Post Tag"/>
+                                </div>
+                            </div>
                         </form>
                     </div>
                    
-                    <Link to="/tags">Back to List</Link>  
+                    <div className="createLink">
+                        <Link className="link" to="/tags">Back to List</Link> 
+                    </div>
                 </div>
             </div>
         </>

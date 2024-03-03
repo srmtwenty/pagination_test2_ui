@@ -35,11 +35,18 @@ function MusicPost(){
                                 <label className="labelPost">Description:</label>
                                 <textarea rows="3" cols="40" onChange={(e)=>setDescription(e.target.value)}/>
                             </div>
-                            <input type="submit" value="Post Music"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Post Music"/>
+                                </div>
+                                
+                            </div>
                         </form>
                     </div>
                  
-                    <Link to="/musics">Back to List</Link>  
+                    <div className="createLink">
+                        <Link className="link" to="/musics">Back to List</Link> 
+                    </div>
                 </div>
             </div>
             

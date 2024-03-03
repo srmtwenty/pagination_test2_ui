@@ -26,7 +26,7 @@ function SoundtrackList(){
     useEffect(()=>{
         loadSoundtrackList();
         loadSoundtracksPagination();
-    },[])
+    },[page])
     
     const deleteSoundtrack=(id)=>{
         axios.delete(`http://localhost:8080/soundtracks/${id}/delete`)
@@ -86,7 +86,16 @@ function SoundtrackList(){
                             <tr>
                                 <td><Link to={`/soundtracks/${sound.id}`}>{sound.id}</Link></td>
                                 <td>{sound.name}</td>
-                                <td><button onClick={()=>deleteSoundtrack(sound.id)}>Delete</button></td>
+                                <td>
+                                    <div className="tdButtonWrapper">
+                                        <div className="tdButtonContainer1">
+                                            <Link className="link" to={`/soundtracks/${sound.id}/update`}>Edit</Link>    
+                                        </div>
+                                        <div className="tdButtonContainer2">
+                                            <button onClick={()=>deleteSoundtrack(sound.id)}>Delete</button>
+                                        </div>                                        
+                                    </div>    
+                                </td>
                             </tr>
                             ))
                         }
@@ -109,8 +118,10 @@ function SoundtrackList(){
             
                 <h2>Soundtrack List is Empty</h2>
                 
-            }
-            <Link to="/soundtracks/create">Post Soundtrack</Link>
+            }<div className="createLink">
+                <Link className="link" to="/soundtracks/create">Post Soundtrack</Link>
+            </div>
+            
             </div>
                 </div>
         </>

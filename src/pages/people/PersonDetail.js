@@ -17,13 +17,16 @@ function PersonDetail(){
     const [tName, setTName]=useState("")
     const [rName, setRName]=useState("")
     const [sName, setSName]=useState("")
+    const [broadcasts, setBroadcasts]=useState([])
+    const [routines, setRoutines]=useState([])
+    const [competition, setCompetition]=useState([])
 
     const {id}=useParams();
     const navigate=useNavigate();
     const loadPerson=()=>{
         axios.get(`http://localhost:8080/people/${id}`)
             .then(res=>{
-                //console.log(res.data)
+                console.log(res.data)
                 setName(res.data.name)
                 setDescription(res.data.description)
                 setGender(res.data.gender)
@@ -76,6 +79,22 @@ function PersonDetail(){
             })
             .catch(err=>console.log(err))
     }
+    const loadBroadcastsForPerson=()=>{
+        axios.get(`http://localhost:8080/people/${id}/broadcasts`)
+            .then(res=>{
+                console.log(res.data)
+                setBroadcasts(res.data)
+            })
+            .catch(err=>console.log(err))
+    }
+    const loadRoutinesForPerson=()=>{
+        axios.get(`http://localhost:8080/people/${id}/routines`)
+            .then(res=>{
+                console.log(res.data)
+                setRoutines(res.data)
+            })
+            .catch(err=>console.log(err))
+    }
     useEffect(()=>{
         loadPerson()
         loadAllRoles()
@@ -84,6 +103,8 @@ function PersonDetail(){
         loadTagsForPerson()
         loadSNSForPerson()
         loadAllNations()
+        loadBroadcastsForPerson()
+        loadRoutinesForPerson()
     }, [])
 
     const addRole=(roleId)=>{
@@ -240,6 +261,19 @@ function PersonDetail(){
                             </form>
                             </ul>   
                         </div>
+                        <div className="row2">
+                            <span className="label2">Broadcasts:</span>
+                            <ul className="ultest2">
+                            {   
+                                broadcasts.length!=0?
+                                broadcasts.map((b)=>(
+                                    <li><Link to={`/broadcasts/${b.id}`}>{b.name}</Link>
+                                    </li>
+                                )):
+                                <>Null</>
+                            }
+                            </ul>
+                        </div>
                         
                         <div className="row2">    
                             <span className="label2">Tags:</span>
@@ -271,18 +305,52 @@ function PersonDetail(){
                         </div> 
                         <div className="row2">
                             <p>{description}</p> 
-                        </div>   
+                        </div>  
+                        <div className="row2">
+                            <span className="label2">Records:</span>
+                            
+                        </div>
+                        <div className="rowTable">
+                            {
+                            routines.length!=0?
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Rank</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        routines.map((rou)=>(
+                                        <tr>
+                                            <td>
+                                                <Link to={`/routines/${rou.id}`}>
+                                                    {rou.name}
+                                                </Link></td>
+                                            <td>{rou.genre} {rou.type}</td>
+                                            <td>{rou.rank}</td>
+                                        </tr>
+                                        ))
+                                    }  
+                                </tbody>
+                            </table>:
+                            <p>Tag List is Empty</p>
+                            } 
+                            </div> 
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/people/create">Post Person</Link>
+                            <Link className="link" to="/people/create">Post Person</Link>
                         </div>
                         <div>
                             <div className="backToDetail">
-                                <Link to={`/people/${id}/update`}>Update</Link>
+                                <Link className="link" to={`/people/${id}/update`}>Update</Link>
                             </div>
                             <div className="backToDetail">
-                                <Link to="/people">Back to List</Link>  
+                                <Link className="link" to="/people">Back to List</Link>  
                             </div>
                         </div>
                     </div>

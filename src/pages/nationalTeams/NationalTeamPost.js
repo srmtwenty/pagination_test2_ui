@@ -38,11 +38,17 @@ function NationalTeamPost(){
                                 <label className="labelPost">Description:</label>
                                 <textarea rows="3" cols="40" onChange={(e)=>setDescription(e.target.value)}/>
                             </div>
-                            <input type="submit" value="Post NationalTeam"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Post National Team"/>
+                                </div>
+                                
+                            </div>
                         </form>
                     </div>
-                   
-                    <Link to="/nationalTeams">Back to List</Link>  
+                    <div className="createLink">
+                        <Link className="link" to="/nationalTeams">Back to List</Link> 
+                    </div> 
                 </div>
             </div>
             

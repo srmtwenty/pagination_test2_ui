@@ -90,14 +90,14 @@ function CompetitionDetail(){
                 </div>
                 <div className="buttonsWrapDetail">
                     <div className="postDetail">
-                        <Link to="/competitions/create">Post Competition</Link>
+                        <Link className="link" to="/competitions/create">Post Competition</Link>
                     </div>
                     <div>
                         <div className="backToDetail">
-                            <Link to={`/competitions/${id}/update`}>Update</Link>
+                            <Link className="link" to={`/competitions/${id}/update`}>Update</Link>
                         </div>
                         <div className="backToDetail">
-                            <Link to="/competitions">Back to List</Link>  
+                            <Link className="link" to="/competitions">Back to List</Link>  
                         </div>
                     </div>                
                 </div>

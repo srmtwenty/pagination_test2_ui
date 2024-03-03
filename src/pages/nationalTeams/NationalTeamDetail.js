@@ -103,14 +103,14 @@ function NationalTeamDetail(){
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/nationalTeams/create">Post</Link> 
+                            <Link className="link" to="/nationalTeams/create">Post</Link> 
                         </div>
                         <div>
                             <div className="backToDetail">
-                                <Link to={`/nationalTeams/${id}/update`}>Update</Link>
+                                <Link className="link" to={`/nationalTeams/${id}/update`}>Update</Link>
                             </div>
                             <div className="backToDetail">
-                                <Link to="/nationalTeams">Back to List</Link>
+                                <Link className="link" to="/nationalTeams">Back to List</Link>
                             </div>
                         </div>
                     </div>

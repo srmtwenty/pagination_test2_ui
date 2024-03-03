@@ -85,7 +85,16 @@ function CompetitionList(){
                                     <td><Link to={`/competitions/${comp.id}`}>{comp.id}</Link></td>
                                     <td>{comp.name}</td>
                                     <td>{comp.date.toLocaleString().split(',')[0]}</td>
-                                    <td><button onClick={()=>deleteCompetition(comp.id)}>Delete Competition</button></td>
+                                    <td>
+                                        <div className="tdButtonWrapper">
+                                            <div className="tdButtonContainer1">
+                                                <Link className="link" to={`/competitions/${comp.id}/update`}>Edit</Link>    
+                                            </div>
+                                            <div className="tdButtonContainer2">
+                                                <button onClick={()=>deleteCompetition(comp.id)}>Delete</button>
+                                            </div>
+                                        </div>    
+                                    </td>
                                 </tr>    
                                 ))
                             }
@@ -106,8 +115,8 @@ function CompetitionList(){
             <h2>Competition List is Empty</h2>
                 
             }
-            <div style={{padding:"10px 0 10px 0"}}>
-                <Link to="/competitions/create">Create Competition</Link>
+            <div className="createLink">
+                <Link className="link" to="/competitions/create">Create Competition</Link>
             </div>
             
             </div>

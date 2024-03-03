@@ -244,3 +244,48 @@ tbody tr:last-of-type{
   background-color:white;
   padding:0.5em 0 0.5em 0;
 }
+
+.updateButtonsWrap{
+  padding:1em 0 0 0;
+  display:inline-block;
+}
+.updateButtonSubmit{
+  float:left;
+  padding:0 0.5em 0 0;
+}
+.updateButtonCancel{
+  float:left;
+  padding:0 0 0 0.5em;
+}
+
+.link:link, .link:visited {
+  background-color: #f44336;
+  border-radius: 0.1em;
+  color: white;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.link:hover, .link:active {
+  background-color: red;
+}
+
+.createLink{
+  padding: 1em 0 0 0;
+}
+
+.tdButtonWrapper{
+  display: inline-block;
+  align-items: center;
+  padding: 0.3em 0 0 0;
+}
+.tdButtonContainer1{
+  float:left;
+  padding:0 0.6em 0 0;
+}
+.tdButtonContainer2{
+  float:left;
+  padding:0 0 0 0.6em;
+}

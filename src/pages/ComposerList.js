@@ -85,7 +85,16 @@ function ComposerList(){
                                 <td><Link to={`/composers/${com.id}`}>{com.id}</Link></td>
                                 <td>{com.name}</td>
         
-                                <td><button onClick={()=>deleteComposer(com.id)}>Delete Composer</button></td>
+                                <td>
+                                    <div className="tdButtonWrapper">
+                                        <div className="tdButtonContainer1">
+                                            <Link className="link" to={`/composers/${com.id}/update`}>Edit</Link>    
+                                        </div>
+                                        <div className="tdButtonContainer2">
+                                            <button onClick={()=>deleteComposer(com.id)}>Delete</button>
+                                        </div>
+                                    </div>    
+                                </td>
                             </tr>    
                             ))
                         }
@@ -105,12 +114,11 @@ function ComposerList(){
             </>:
             <h2>Composer List is Empty</h2>
             }
-        
-        
-        
-            <Link to="/composers/create">Create Composer</Link>
+            <div className="createLink">
+                <Link className="link" to="/composers/create">Create Composer</Link>
             </div>
-                </div>
+            </div>
+            </div>
         </>
     )
 }

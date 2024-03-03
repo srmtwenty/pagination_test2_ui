@@ -58,11 +58,20 @@ function PersonUpdate(){
                                     <option value={1}>Female</option>
                                 </select>
                             </div>
-                            <input type="submit" value="Update Person"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Update Person"/>
+                                </div>
+                                <div className="updateButtonCancel">
+                                    <Link className="link" to={`/people/${id}`}>Cancel</Link> 
+                                </div>
+                            </div>
                         </form>
                     </div>
-                    
-                    <Link to="/people">Back to List</Link>  
+                    <div className="createLink">
+                        <Link className="link" to="/people">Back to List</Link> 
+                    </div>
+                     
                 </div>
             </div>
         </>

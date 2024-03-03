@@ -194,14 +194,14 @@ function ArticleDetail(){
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/articles/create">Post Person</Link>
+                            <Link className="link" to="/articles/create">Post Person</Link>
                         </div>
                         <div>
                             <div className="backToDetail">
-                                <Link to={`/articles/${id}/update`}>Update</Link>
+                                <Link className="link" to={`/articles/${id}/update`}>Update</Link>
                             </div>
                             <div className="backToDetail">
-                                <Link to="/articles">Back to List</Link>  
+                                <Link className="link" to="/articles">Back to List</Link>  
                             </div>
                         </div>
                     </div>

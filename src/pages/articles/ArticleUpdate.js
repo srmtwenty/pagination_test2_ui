@@ -63,10 +63,20 @@ function ArticleUpdate(){
                                 <label className="labelPost">Description:</label>
                                 <textarea rows="4" cols="50" onChange={(e)=>setDescription(e.target.value)} value={description}/>
                             </div>
-                            <input type="submit" value="Update Artist"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Update Article"/>
+                                </div>
+                                <div className="updateButtonCancel">
+                                    <Link className="link" to={`/articles/${id}`}>Cancel</Link> 
+                                </div>
+                            </div>
                         </form>
                     </div>
-                    <Link to="/articles">Back to List</Link>
+                    <div className="createLink">
+                        <Link className="link" to="/articles">Back to List</Link>
+                    </div>
+                    
                 </div>
             </div>
         </>

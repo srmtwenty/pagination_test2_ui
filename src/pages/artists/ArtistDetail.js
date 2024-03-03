@@ -62,14 +62,14 @@ function ArtistDetail(){
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/artists/create">Post</Link>
+                            <Link className="link" to="/artists/create">Post</Link>
                         </div>
                         <div>
                            <div className="backToDetail">
-                                <Link to={`/artists/${id}/update`}>Update</Link>  
+                                <Link className="link" to={`/artists/${id}/update`}>Update</Link>  
                             </div>
                             <div className="backToDetail">
-                                <Link to="/artists">Back to List</Link>  
+                                <Link className="link" to="/artists">Back to List</Link>  
                             </div>
                         </div>
                     </div>

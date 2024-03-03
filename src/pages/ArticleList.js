@@ -91,7 +91,16 @@ function ArticleList(){
                                         <td>{article.address}</td>
                                         <td>{article.date}</td>
                                         
-                                        <td><button onClick={()=>deleteArticle(article.id)}>Delete</button></td>
+                                        <td>
+                                            <div className="tdButtonWrapper">
+                                                <div className="tdButtonContainer1">
+                                                    <Link className="link" to={`/articles/${article.id}/update`}>Edit</Link>    
+                                                </div>
+                                                <div className="tdButtonContainer2">
+                                                    <button onClick={()=>deleteArticle(article.id)}>Delete</button>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>    
                                     )
                                 }
@@ -113,8 +122,10 @@ function ArticleList(){
             
                     <h2>Article List is Empty</h2>
             
-            }
-            <Link to="/articles/create">Create Article</Link>
+            }<div className="createLink">
+                <Link className="link" to="/articles/create">Create Article</Link>
+            </div>
+            
             </div>
             </div>
         </>

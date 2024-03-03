@@ -10,9 +10,24 @@ function BroadcastUpdate(){
     const [url, setUrl]=useState("")
     const [date, setDate]=useState(new Date())
     const [description, setDescription]=useState("")
+    //const [roles, setRoles]=useState([])
 
     const {id}=useParams();
     const navigate=useNavigate();
+    const loadBroadcast=()=>{
+        axios.get(`http://localhost:8080/broadcasts/${id}`)
+            .then(res=>{
+                setName(res.data.name)
+                setUrl(res.data.url)
+                setDate(res.data.date)
+                setDescription(res.data.description)
+            })
+            .catch(err=>console.log(err))
+    }
+    
+    useEffect(()=>{
+        loadBroadcast()
+    },[])
     const handleUpdate=(e)=>{
         e.preventDefault()
         axios.put(`http://localhost:8080/broadcasts/${id}/update`, {
@@ -49,10 +64,21 @@ function BroadcastUpdate(){
                                 <label className="labelPost">Description:</label>
                                 <textarea rows="4" cols="50" onChange={(e)=>setDescription(e.target.value)} value={description}/>
                             </div>
-                            <input type="submit" value="Update Broadcast"/>
+                            
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Update Broadcast"/>
+                                </div>
+                                <div className="updateButtonCancel">
+                                    <Link className="link" to={`/broadcasts/${id}`}>Cancel</Link> 
+                                </div>
+                            </div>
                         </form>
                     </div>
-                    <Link to="/broadcasts">Back to List</Link>
+                    <div className="createLink">
+                        <Link className="link" to="/broadcasts">Back to List</Link>
+                    </div>
+                    
                 </div>
             </div>
         </>

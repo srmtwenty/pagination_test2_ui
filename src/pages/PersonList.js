@@ -25,7 +25,7 @@ function PersonList(){
     useEffect(()=>{
         loadPeople();
         loadPeoplePagination();
-    },[])
+    },[page, field, rowsPerPage, field])
 
     const deletePerson=(id)=>{
         axios.delete(`http://localhost:8080/people/${id}/delete`)
@@ -48,17 +48,18 @@ function PersonList(){
     }
     const handleFieldName=(field)=>{
         setField(field)
-        loadPeoplePagination();
+        //loadPeoplePagination();
     }
 
     const handleChangePage=(e, newPage)=>{
         setPage(newPage)
-        loadPeoplePagination();
+        //loadPeoplePagination();
     }
     const handleChangeRowsPerPage=(e)=>{
         setRowsPerPage(parseInt(e.target.value, 10));
+        //setRowsPerPage(e.target.value);
         setPage(0);
-        loadPeoplePagination();
+        //loadPeoplePagination();
     }
     const title={
         padding:"10px 0 10px 0"
@@ -93,12 +94,19 @@ function PersonList(){
                                         <td>{
                                             person.nationality?
                                             <>{person.nationality.name}</>:
-                                    <>Null</>
-                                }</td>
+                                            <>Null</>
+                                            }
+                                        </td>
                                         <td>{person.gender}</td>
                                         <td>
-                                            <Link to={`/people/${person.id}/update`}>Edit</Link>
-                                            |<button onClick={()=>deletePerson(person.id)}>Delete</button>
+                                            <div className="tdButtonWrapper">
+                                                <div className="tdButtonContainer1">
+                                                    <Link className="link" to={`/people/${person.id}/update`}>Edit</Link>    
+                                                </div>
+                                                <div className="tdButtonContainer2">
+                                                    <button onClick={()=>deletePerson(person.id)}>Delete</button>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>    
                                     )
@@ -118,11 +126,12 @@ function PersonList(){
                         </Stack>
                 </div>
             </>:
-            
                     <h2>Person List is Empty</h2>
-            
             }
-            <Link to="/people/create">Create Person</Link>
+            <div className="createLink">
+                <Link className="link" to="/people/create">Create Person</Link>
+            </div>
+           
             </div>
             </div>
         </>

@@ -63,14 +63,14 @@ function TagDetail(){
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/tags/create">Post</Link> 
+                            <Link className="link" to="/tags/create">Post</Link> 
                         </div>
                         <div>
                             <div className="backToDetail">
-                                <Link to={`/tags/${id}/update`}>Update</Link> 
+                                <Link className="link" to={`/tags/${id}/update`}>Update</Link> 
                             </div>
                             <div className="backToDetail">
-                                <Link to="/tags">Back to List</Link>  
+                                <Link className="link" to="/tags">Back to List</Link>  
                             </div>
                         </div>
                     </div>  

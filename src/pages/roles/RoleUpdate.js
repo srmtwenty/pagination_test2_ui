@@ -41,11 +41,20 @@ function RoleUpdate(){
                                 <input type="text" onChange={(e)=>setName(e.target.value)} value={name}/>
                             </div>
                             
-                            <input type="submit" value="Update Role"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Update Role"/>
+                                </div>
+                                <div className="updateButtonCancel">
+                                    <Link className="link" to={`/roles/${id}`}>Cancel</Link> 
+                                </div>
+                            </div>
                         </form>
                     </div>
+                    <div className="createLink">
+                        <Link className="link" to="/roles">Back to List</Link>  
+                    </div>
                     
-                    <Link to="/roles">Back to List</Link>  
                 </div>
             </div>
         </>

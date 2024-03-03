@@ -52,10 +52,10 @@ function RoutineUpdate(){
         <>
             <div className="profile_wrap2">
                 <div className="profile_grid1">
-                    <h2>Create Routine</h2>
+                    <h2>Update Routine</h2>
                     <div className="labelsPost">
                         <form onSubmit={handleUpdate}>
-                            <div className="row">
+                            <div className="row2">
                                 <label className="labelPost">Name:</label>
                                 <input type="text" onChange={(e)=>setName(e.target.value)} value={name}/>
                             </div>
@@ -63,7 +63,7 @@ function RoutineUpdate(){
                                 <label className="labelPost">Description:</label>
                                 <textarea rows="4" cols="50" onChange={(e)=>setDescription(e.target.value)} value={description}/>
                             </div>
-                            <div className="row">
+                            <div className="row2">
                                 <label className="labelPost">Genre:</label>
                                 <select id="genre" name="genre" onChange={(e)=>setGenre(e.target.value)} value={genre}>
                                     <option value={0}>Solo</option>
@@ -99,11 +99,20 @@ function RoutineUpdate(){
                                 <label className="labelPost">Date:</label>
                                 <input type="date" onChange={(e)=>setDate(e.target.value)} value={date}/>
                             </div>
-                            <input type="submit" value="Update Routine"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Update Routine"/>
+                                </div>
+                                <div className="updateButtonCancel">
+                                    <Link className="link" to={`/routines/${id}`}>Cancel</Link> 
+                                </div>
+                            </div>
                         </form>
                     </div>
-                   
-                    <Link to="/routines">Back to List</Link>  
+                    <div className="createLink">
+                        <Link className="link" to="/routines">Back to List</Link> 
+                    </div>
+                     
                 </div>
             </div>
         

@@ -85,7 +85,16 @@ function RoleList(){
                         <tr>
                             <td><Link to={`/roles/${role.id}`}>{role.id}</Link></td>
                             <td>{role.name}</td>
-                            <td><button onClick={()=>deleteRole(role.id)}>Delete</button></td>
+                            <td>
+                                <div className="tdButtonWrapper">
+                                        <div className="tdButtonContainer1">
+                                            <Link className="link" to={`/roles/${role.id}/update`}>Edit</Link>    
+                                        </div>
+                                        <div className="tdButtonContainer2">
+                                            <button onClick={()=>deleteRole(role.id)}>Delete</button>
+                                        </div>
+                                    </div>    
+                                </td>
                         </tr>
                         ))
                     }
@@ -108,7 +117,10 @@ function RoleList(){
                     <h2>Role List is Empty</h2>
                 
             }
-            <Link to="/roles/create">Post Role</Link>
+            <div className="createLink">
+                <Link className="link" to="/roles/create">Post Role</Link>
+            </div>
+            
             </div>
             </div>
         </>

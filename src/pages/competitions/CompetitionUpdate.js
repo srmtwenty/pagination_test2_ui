@@ -41,7 +41,7 @@ function CompetitionUpdate(){
         <>
         <div className="profile_wrap2">
         <div className="profile_grid1">
-            <h2>Create Competition</h2>
+            <h2>Update Competition</h2>
             <div className="labelsPost">
                 <form onSubmit={handleUpdate}>
                     <div className="row2">
@@ -60,11 +60,22 @@ function CompetitionUpdate(){
                         <label className="labelPost">Date:</label>
                         <input type="date" onChange={(e)=>setDate(e.target.value)} value={date}/>
                     </div>
-                    <input type="submit" value="Update Competition"/>
+                    <div className="updateButtonsWrap">
+                        <div className="updateButtonSubmit">
+                            <input type="submit" value="Update Competition"/>
+                        </div>
+                        <div className="updateButtonCancel">
+                            <Link className="link" to={`/competitions/${id}`}>Cancel</Link> 
+                        </div>
+                        
+                    </div>
+                    
                 </form>
             </div>
-       
-                <Link to="/competitions">Back to List</Link>  
+            <div className="createLink">
+                <Link className="link" to="/competitions">Back to List</Link>  
+            </div>
+                
         </div>
     </div>
         </>

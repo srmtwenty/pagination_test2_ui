@@ -51,11 +51,20 @@ function MusicUpdate(){
                                 <label className="labelPost">Description:</label>
                                 <textarea rows="4" cols="50" onChange={(e)=>setDescription(e.target.value)} value={description}/>
                             </div>
-                            <input type="submit" value="Update Music"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Update Music"/>
+                                </div>
+                                <div className="updateButtonCancel">
+                                    <Link className="link" to={`/musics/${id}`}>Cancel</Link> 
+                                </div>
+                            </div>
                         </form>
                     </div>
+                    <div className="createLink">
+                        <Link className="link" to="/musics">Back to List</Link>  
+                    </div>
                     
-                    <Link to="/musics">Back to List</Link>  
                 </div>
             </div>
         </>

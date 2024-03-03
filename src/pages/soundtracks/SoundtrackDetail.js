@@ -92,14 +92,14 @@ function SoundtrackDetail(){
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/soundtracks/create">Post</Link>  
+                            <Link className="link" to="/soundtracks/create">Post</Link>  
                         </div>
                         <div>
                             <div className="backToDetail">
-                                <Link to={`/soundtracks/${id}/update`}>Update</Link> 
+                                <Link className="link" to={`/soundtracks/${id}/update`}>Update</Link> 
                             </div>
                             <div className="backToDetail">
-                                <Link to="/soundtracks">Back to List</Link> 
+                                <Link className="link" to="/soundtracks">Back to List</Link> 
                             </div>
                         </div>
                     </div>    

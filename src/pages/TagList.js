@@ -85,7 +85,16 @@ function TagList(){
                                 <tr>
                                     <td><Link to={`/tags/${tag.id}`}>{tag.id}</Link></td>
                                     <td>{tag.name}</td>
-                                    <td><button onClick={()=>deleteTag(tag.id)}>Delete</button></td>
+                                    <td>
+                                        <div className="tdButtonWrapper">
+                                            <div className="tdButtonContainer1">
+                                                <Link className="link" to={`/articles/${tag.id}/update`}>Edit</Link>    
+                                            </div>
+                                            <div className="tdButtonContainer2">
+                                                <button onClick={()=>deleteTag(tag.id)}>Delete</button>
+                                            </div>
+                                        </div>    
+                                    </td>
                                 </tr>
                                 ))
                             }
@@ -104,11 +113,11 @@ function TagList(){
                     </Stack>
                     </div>
                     </>:
-                    
-                            <h2>Tag List is Empty</h2>
-                        
+                            <h2>Tag List is Empty</h2>  
                     }
-                    <Link to="/tags/create">Create Tag</Link>
+                    <div className="createLink">
+                        <Link className="link" to="/tags/create">Create Tag</Link>
+                    </div>
                 </div>
             </div>
         </>

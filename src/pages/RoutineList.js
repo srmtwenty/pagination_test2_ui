@@ -94,7 +94,16 @@ function RoutineList(){
                                         <td>{r.type}</td>
                                         <td>{r.rank}</td>
                                         <td>{r.date.toLocaleString().split(',')[0]}</td>
-                                        <td><button onClick={()=>deleteRoutine(r.id)}>Delete</button></td>
+                                        <td>
+                                            <div className="tdButtonWrapper">
+                                                <div className="tdButtonContainer1">
+                                                    <Link className="link" to={`/routines/${r.id}/update`}>Edit</Link>    
+                                                </div>
+                                                <div className="tdButtonContainer2">
+                                                    <button onClick={()=>deleteRoutine(r.id)}>Delete</button>
+                                                </div>
+                                            </div>    
+                                        </td>
                                     </tr>    
                                     ))
                                 }
@@ -116,8 +125,10 @@ function RoutineList(){
            
                     <h2>Routine List is Empty</h2>
             }
-                
-            <Link to="/routines/create">Create Routine</Link>
+            <div className="createLink">
+                <Link className="link" to="/routines/create">Create Routine</Link>
+            </div>
+            
                     
             </div>
         </div>

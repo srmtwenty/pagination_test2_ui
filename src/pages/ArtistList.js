@@ -94,8 +94,14 @@ function ArtistList(){
                                 <td><Link to={`/artists/${artist.id}`}>{artist.id}</Link></td>
                                 <td>{artist.name}</td>
                                 <td>
-                                    <a href={`/artists/${artist.id}/update`}>Edit</a>
-                                    <button onClick={()=>deleteArtist(artist.id)}>Delete</button>
+                                <div className="tdButtonWrapper">
+                                                <div className="tdButtonContainer1">
+                                                    <Link className="link" to={`/artists/${artist.id}/update`}>Edit</Link>    
+                                                </div>
+                                                <div className="tdButtonContainer2">
+                                                    <button onClick={()=>deleteArtist(artist.id)}>Delete</button>
+                                                </div>
+                                            </div>
                                 </td>
                             </tr>
                             ))
@@ -117,8 +123,10 @@ function ArtistList(){
                 </>:
                 <h2>Artist List is Empty</h2>
             }
+            <div className="createLink">
+                <Link className="link" to="/artists/create">Post Artist</Link>
+            </div>
             
-            <Link to="/artists/create">Post Artist</Link>
             </div>
             </div>
             

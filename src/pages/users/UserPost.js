@@ -27,11 +27,17 @@ function UserPost(){
                                 <label className="labelPost">Name:</label>
                                 <input type="text" onChange={(e)=>setName(e.target.value)}/>
                             </div>
-                            <input type="submit" value="Post User"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Post User"/>
+                                </div>
+                            </div>
                         </form>
                     </div>
                       
-                    <Link to="/users">Back to List</Link>  
+                    <div className="createLink">
+                        <Link className="link" to="/users">Back to List</Link> 
+                    </div> 
                 </div>
             </div>
         </>

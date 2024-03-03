@@ -85,7 +85,16 @@ function MusicList(){
                                 <td><Link to={`/musics/${music.id}`}>{music.id}</Link></td>
                                 <td>{music.name}</td>
                     
-                                <td><button onClick={()=>deleteMusic(music.id)}>Delete Music</button></td>
+                                <td>
+                                    <div className="tdButtonWrapper">
+                                        <div className="tdButtonContainer1">
+                                            <Link className="link" to={`/musics/${music.id}/update`}>Edit</Link>    
+                                        </div>
+                                        <div className="tdButtonContainer2">
+                                            <button onClick={()=>deleteMusic(music.id)}>Delete</button>
+                                        </div>
+                                    </div>    
+                                </td>
                             </tr>  
                             ))
                         }
@@ -105,7 +114,10 @@ function MusicList(){
             </>:
             <h2>Music List is Empty</h2>
             }
-            <Link to="/musics/create">Create Music</Link>
+            <div className="createLink">
+                <Link className="link" to="/musics/create">Create Music</Link>
+            </div>
+            
             </div>
             </div>
         </>

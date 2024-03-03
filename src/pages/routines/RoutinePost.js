@@ -78,11 +78,17 @@ function RoutinePost(){
                                 <label className="labelPost">Date:</label>
                                 <input type="date" onChange={(e)=>setDate(e.target.value)}/>
                             </div>
-                            <input type="submit" value="Post Routine"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Post Routine"/>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     
-                    <Link to="/routines">Back to List</Link>  
+                    <div className="createLink">
+                        <Link className="link" to="/routines">Back to List</Link> 
+                    </div>
                 </div>
             </div>
         </>

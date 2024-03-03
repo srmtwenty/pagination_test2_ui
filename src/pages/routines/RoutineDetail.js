@@ -221,12 +221,12 @@ function RoutineDetail(){
                             </ul>
                         </div>
                         <div className="row2">
-                            <span className="label2">Swimers:</span>
+                            <span className="label2">Swimmers:</span>
                             <ul className="ultest2">
                             {   
                                 swimmers?
                                 swimmers.map((swimmer)=>(
-                                    <li><Link to={`/swimmers/${swimmer.id}`}>{swimmer.name}</Link>
+                                    <li><Link to={`/people/${swimmer.id}`}>{swimmer.name}</Link>
                                         <button className="marginLeft" onClick={()=>removeSwimmer(swimmer.id)}>Remove Swimmer</button>
                                     </li>
                                 )):
@@ -253,14 +253,14 @@ function RoutineDetail(){
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/routines/create">Post</Link>  
+                            <Link className="link" to="/routines/create">Post</Link>  
                         </div>
                         <div>
                             <div className="backToDetail">
-                                <Link to={`/routines/${id}/update`}>Update</Link>  
+                                <Link className="link" to={`/routines/${id}/update`}>Update</Link>  
                             </div>
                             <div className="backToDetail">
-                                <Link to="/routines">Back to List</Link> 
+                                <Link className="link" to="/routines">Back to List</Link> 
                             </div>
                         </div>
                     </div>    

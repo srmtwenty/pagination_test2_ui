@@ -89,7 +89,16 @@ function NationalTeamList(){
                                     <td><Link to={`/nationalTeams/${national.id}`}>{national.id}</Link></td>
                                     <td>{national.name}</td>
                                     
-                                    <td><button onClick={()=>deleteNationalTeam(national.id)}>Delete</button></td>
+                                    <td>
+                                        <div className="tdButtonWrapper">
+                                            <div className="tdButtonContainer1">
+                                                <Link className="link" to={`/nationalTeams/${national.id}/update`}>Edit</Link>    
+                                            </div>
+                                            <div className="tdButtonContainer2">
+                                                <button onClick={()=>deleteNationalTeam(national.id)}>Delete</button>
+                                            </div>
+                                        </div>    
+                                    </td>
                                 </tr>    
                                 ))
                             }
@@ -112,7 +121,10 @@ function NationalTeamList(){
                 </>:
                     <h2>National Team List is Empty</h2>
             }
-            <Link to="/nationalTeams/create">Create National Team</Link>
+            <div className="createLink">
+                <Link className="link" to="/nationalTeams/create">Create National Team</Link>
+            </div>
+            
             </div>
             </div>
                  

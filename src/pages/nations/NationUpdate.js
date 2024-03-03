@@ -42,11 +42,20 @@ function NationUpdate(){
                                 <input type="text" onChange={(e)=>setName(e.target.value)} value={name}/>
                             </div>
                             
-                            <input type="submit" value="Update Nation"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Update Nation"/>
+                                </div>
+                                <div className="updateButtonCancel">
+                                    <Link className="link" to={`/nations/${id}`}>Cancel</Link> 
+                                </div>
+                            </div>
                         </form>
                     </div>
+                    <div className="createLink">
+                        <Link className="link" to="/nations">Back to List</Link>  
+                    </div>
                     
-                    <Link to="/nations">Back to List</Link>  
                 </div>
             </div>
         </>

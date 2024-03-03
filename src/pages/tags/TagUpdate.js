@@ -41,11 +41,20 @@ function TagUpdate(){
                                 <label className="labelPost">Name:</label>
                                 <input type="text" onChange={(e)=>setName(e.target.value)} value={name}/>
                             </div>
-                            <input type="submit" value="Update Tag"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Update Tag"/>
+                                </div>
+                                <div className="updateButtonCancel">
+                                    <Link className="link" to={`/tags/${id}`}>Cancel</Link> 
+                                </div>
+                            </div>
                         </form>
                     </div>
+                    <div className="createLink">
+                        <Link className="link" to="/tags">Back to List</Link>  
+                    </div>
                     
-                    <Link to="/tags">Back to List</Link>  
                 </div>
             </div>
         </>

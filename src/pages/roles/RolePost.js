@@ -28,11 +28,16 @@ function RolePost(){
                                 <input type="text" onChange={(e)=>setName(e.target.value)}/>
                             </div>
                             
-                            <input type="submit" value="Post Role"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Post Role"/>
+                                </div>
+                            </div>
                         </form>
                     </div>
-                    
-                    <Link to="/roles">Back to List</Link>  
+                    <div className="createLink">
+                        <Link className="link" to="/roles">Back to List</Link> 
+                    </div> 
                 </div>
             </div>
         </>

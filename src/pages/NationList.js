@@ -85,7 +85,16 @@ function NationList(){
                             <tr>
                                 <td><Link to={`/nations/${nation.id}`}>{nation.id}</Link></td>
                                 <td>{nation.name}</td>
-                                <td><button onClick={()=>deleteNation(nation.id)}>Delete</button></td>
+                                <td>
+                                    <div className="tdButtonWrapper">
+                                        <div className="tdButtonContainer1">
+                                            <Link className="link" to={`/nations/${nation.id}/update`}>Edit</Link>    
+                                        </div>
+                                        <div className="tdButtonContainer2">
+                                            <button onClick={()=>deleteNation(nation.id)}>Delete</button>
+                                        </div>
+                                    </div>    
+                                </td>
                             </tr>    
                             ))
                         }
@@ -107,7 +116,10 @@ function NationList(){
             </>:
                     <h2>Nation List is Empty</h2>
             }
-            <Link to="/nations/create">Create Nation</Link>
+            <div className="createLink">
+                <Link className="link" to="/nations/create">Create Nation</Link>
+            </div>
+            
             </div>
             </div>
         </>

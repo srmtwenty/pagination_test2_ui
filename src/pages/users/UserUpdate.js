@@ -37,11 +37,20 @@ function UserUpdate(){
                                 <label className="labelPost">Name:</label>
                                 <input type="text" onChange={(e)=>setName(e.target.value)} value={name}/>
                             </div>
-                            <input type="submit" value="Update User"/>
+                            <div className="updateButtonsWrap">
+                                <div className="updateButtonSubmit">
+                                    <input type="submit" value="Update User"/>
+                                </div>
+                                <div className="updateButtonCancel">
+                                    <Link className="link" to={`/users/${id}`}>Cancel</Link> 
+                                </div>
+                            </div>
                         </form>
                     </div>
-                      
-                    <Link to="/users">Back to List</Link>  
+                    <div className="createLink">
+                        <Link className="link" to="/users">Back to List</Link> 
+                    </div>
+                     
                 </div>
             </div>
         </>

@@ -89,7 +89,16 @@ function BroadcastList(){
                                         <td><Link to={`/broadcasts/${broadcast.id}`}>{broadcast.id}</Link></td>
                                         <td>{broadcast.name}</td>
                                         <td>{broadcast.date}</td>     
-                                        <td><button onClick={()=>deleteBroadcast(broadcast.id)}>Delete</button></td>
+                                        <td>
+                                            <div className="tdButtonWrapper">
+                                                <div className="tdButtonContainer1">
+                                                    <Link className="link" to={`/broadcasts/${broadcast.id}/update`}>Edit</Link>    
+                                                </div>
+                                                <div className="tdButtonContainer2">
+                                                    <button onClick={()=>deleteBroadcast(broadcast.id)}>Delete</button>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>    
                                     )
                                 }
@@ -112,7 +121,10 @@ function BroadcastList(){
                     <h2>Broadcast List is Empty</h2>
             
             }
-            <Link to="/broadcasts/create">Create Broadcast</Link>
+            <div className="createLink">
+                <Link className="link" to="/broadcasts/create">Create Broadcast</Link>
+            </div>
+            
             </div>
             </div>
         </>

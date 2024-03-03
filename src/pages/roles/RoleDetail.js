@@ -36,14 +36,14 @@ function RoleDetail(){
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/roles/create">Post</Link>  
+                            <Link className="link" to="/roles/create">Post</Link>  
                         </div>
                         <div>
                             <div className="backToDetail">
-                                <Link to={`/roles/${id}/update`}>Update</Link> 
+                                <Link className="link" to={`/roles/${id}/update`}>Update</Link> 
                             </div>
                             <div className="backToDetail">
-                                <Link to="/roles">Back to List</Link>
+                                <Link className="link" to="/roles">Back to List</Link>
                             </div>
                         </div>
                     </div>

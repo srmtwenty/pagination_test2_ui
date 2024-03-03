@@ -49,14 +49,14 @@ function NationDetail(){
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/nations/create">Post</Link>
+                            <Link className="link" to="/nations/create">Post</Link>
                         </div>
                         <div>
                             <div className="backToDetail">
-                                <Link to={`/nations/${id}/update`}>Update</Link>
+                                <Link className="link" to={`/nations/${id}/update`}>Update</Link>
                             </div>
                             <div className="backToDetail">
-                                <Link to="/nations">Back to List</Link>  
+                                <Link className="link" to="/nations">Back to List</Link>  
                             </div>
                         </div>
                     </div>

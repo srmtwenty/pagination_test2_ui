@@ -101,7 +101,16 @@ function UserList(){
                         <tr>
                             <td><Link to={`/users/${user.id}`}>{user.id}</Link></td>
                             <td>{user.name}</td>
-                            <td><button onClick={()=>deleteUser(user.id)}>Delete</button></td>
+                            <td>
+                                <div className="tdButtonWrapper">
+                                    <div className="tdButtonContainer1">
+                                        <Link className="link" to={`/users/${user.id}/update`}>Edit</Link>    
+                                    </div>
+                                    <div className="tdButtonContainer2">
+                                        <button onClick={()=>deleteUser(user.id)}>Delete</button>
+                                    </div>
+                                </div>    
+                            </td>
                         </tr>
                         ))
                     }
@@ -121,13 +130,14 @@ function UserList(){
             </div>
             </div>
             </>:
-            
                     <h2>User List is Empty</h2>
-              
             }
-            <Link to="/users/create">Post User</Link>
+            <div className="createLink">
+                <Link className="link" to="/users/create">Post User</Link>
             </div>
-                </div>
+            
+            </div>
+            </div>
         </>
     )
 }

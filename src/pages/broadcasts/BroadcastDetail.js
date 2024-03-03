@@ -194,14 +194,14 @@ function BroadcastDetail(){
                     </div>
                     <div className="buttonsWrapDetail">
                         <div className="postDetail">
-                            <Link to="/broadcasts/create">Post Person</Link>
+                            <Link className="link" to="/broadcasts/create">Post Person</Link>
                         </div>
                         <div>
                             <div className="backToDetail">
-                                <Link to={`/broadcasts/${id}/update`}>Update</Link>
+                                <Link className="link" to={`/broadcasts/${id}/update`}>Update</Link>
                             </div>
                             <div className="backToDetail">
-                                <Link to="/broadcasts">Back to List</Link>  
+                                <Link className="link" to="/broadcasts">Back to List</Link>  
                             </div>
                         </div>
                     </div>
